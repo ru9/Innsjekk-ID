@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>ID Check</title>
+  <script type="text/javascript" src="externalveriable.js"></script>
+  <script type="text/javascript" src="testdb.js"></script>
+</head>
+
+<body>
+  <H1>New card ID</H1>
+  <p>
+    <button type="button" , onclick="window.location.replace('file:///D:/Innsjekk ID/index');">Cancel</button>
+  </p>
+
+
+</body>
+
+</html>

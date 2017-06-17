@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>ID Check</title>
+  <script type="text/javascript" src="externalveriable.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    setTimeout(function() {
+      window.location.replace("file:///D:/Innsjekk ID/index")
+    }, 2000);
+  </script>
+
+
+  <H1>ID recognised</H1>
+
+  <button type="button" , onclick="f1();">Post veriable</button>
+  <button type="button" , onclick="window.location.replace('file:///D:/Innsjekk ID/index');">Home</button>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>ID Check</title>
+  <script type="text/javascript" src="externalveriable.js"></script>
+  <script type="text/javascript" src="testdb.js"></script>
+</head>
+
+<body>
+  <H1>Welcome</H1>
+  <p>
+    <button type="button" , onclick="storeCardId();">Card swipe</button>
+
+  </p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+
+
+var name = 'Runar';
+var age = 26;
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('What would you like to do? \n 1. Show name. \n 2. Show age. \n 3. Both. \n',(answer1) => {
+
+  if (answer1 == 1) {
+    console.log('Name: ' + name);
+  } else if (answer1 == 2) {
+    console.log('Age: ' + age);
+  } else if (answer1 == 3) {
+    console.log('Name: ' + name + '\n' + 'Age: ' + age);
+  }else {
+    console.log('Wrong parameter :D');
+  }
+
+  rl.question('Is this information correct? \n 1. Yes. \n 2. No. \n', (answer2) => {
+
+    if (answer2 == 1) {
+      console.log ('Good! Have a nice day!');
+    } else if (answer2 == 2){
+      if (answer1 == 1) {
+        rl.question('Oh no! What is your correct name? \n', (answer3) => {
+          name = (answer3);
+          console.log('Name: ' + name);
+        });
+      } else {
+        console.log('Too bad!');
+      }
+
+    }
+
+
+
+  rl.close();
+});
