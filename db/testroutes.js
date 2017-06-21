@@ -27,7 +27,9 @@ router.route('/Worker')
   .post(function(req, res) {
 
     var worker = new Worker(); // create a new instance of the worker model
-    worker.name = req.body.name; // set the workers name (comes from the request)
+    console.log(req.body);
+    worker.name = req.body.name;
+    worker.company = req.body.company; // set the workers name (comes from the request)
 
     // save the worker and check for errors
     worker.save(function(err) {
