@@ -1,5 +1,5 @@
 //GETing stored variable Card ID
-var cardId = localStorage.getItem("Card ID");
+var cardId = localStorage.getItem("cardId");
 
 //Storing and sending info to node
 function testResults(form) {

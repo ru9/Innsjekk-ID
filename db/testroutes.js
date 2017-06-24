@@ -56,14 +56,22 @@ router.route('/Worker/:worker_id')
 
   // get the bear with that id (accessed at GET http://localhost:8080/api/bears/:bear_id)
   .get(function(req, res) {
-    Worker.findById(req.params.worker_id, function(err, worker) {
+
+    Worker.where({
+      cardid: req.params.worker_id
+    }).findOne(function(err, worker) {
       if (worker === null || err)
         res.status(404).send('Not found');
       res.json(worker);
     });
-  })
+    /*Worker.findById(req.params.worker_id, function(err, worker) {
+      if (worker === null || err)
+        res.status(404).send('Not found');
+      res.json(worker);
+    });*/
+  });
 
-  .put(function(req, res) {
+/*  .put(function(req, res) {
 
     // use our bear model to find the bear we want
     Worker.findById(req.params.worker_id, function(err, worker) {
@@ -98,5 +106,5 @@ router.route('/Worker/:worker_id')
       });
     });
   });
-
+*/
 module.exports = router;

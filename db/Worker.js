@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var workerSchema = new Schema({
   name: String,
   company: String,
-  cardid: String
+  cardid: Number
 });
 
 module.exports = mongoose.model('Worker', workerSchema);
