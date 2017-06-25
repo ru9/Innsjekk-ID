@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <!--  <script type="text/javascript">
+  <script type="text/javascript">
     setTimeout(function() {
       window.location.replace("file:///D:/Innsjekk ID/index")
     }, 2000);
   </script>
--->
+
   <H1>ID recognised</H1>
 
   <button type="button" , onclick="f1();">Post veriable</button>

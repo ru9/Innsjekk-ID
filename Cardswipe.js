@@ -1,8 +1,4 @@
-var jsonDbRes = localStorage.getItem("dbRes");
-
-var scannedWorker = JSON.parse(jsonDbRes);
-
-console.log(scannedWorker);
+var scannedWorker = JSON.parse(localStorage.getItem("dbRes"));
 
 window.onload = function() {
   var output = document.getElementById('output');

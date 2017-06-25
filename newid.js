@@ -15,4 +15,5 @@ function testResults(form) {
     "cardid": cardId
   }));
   alert(fullName + "\n" + companyName + "\n" + cardId);
+  window.location.replace("file:///D:/Innsjekk ID/index");
 }
