@@ -4,7 +4,7 @@ var cardId = localStorage.getItem("cardId");
 //Storing and sending info to node
 function testResults(form) {
   var fullName = form.fullname.value;
-  var companyName = form.companyname.value; >>>
+  var companyName = form.companyname.value;
 
   var xhr = new XMLHttpRequest();
   xhr.open('POST', "http://localhost:8080/api/worker/", true);
