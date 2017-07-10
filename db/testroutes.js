@@ -30,7 +30,8 @@ router.route('/Worker')
     console.log(req.body);
     worker.name = req.body.name;
     worker.company = req.body.company;
-    worker.cardid = req.body.cardid; // set the workers name (comes from the request)
+    worker.cardid = req.body.cardid;
+    worker.checkedIn = req.body.checkedIn; // set the workers name (comes from the request)
 
     // save the worker and check for errors
     worker.save(function(err) {

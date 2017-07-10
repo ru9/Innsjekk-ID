@@ -6,7 +6,8 @@ var Schema = mongoose.Schema;
 var workerSchema = new Schema({
   name: String,
   company: String,
-  cardid: Number
+  cardid: Number,
+  checkedIn: Boolean
 });
 
 module.exports = mongoose.model('Worker', workerSchema);

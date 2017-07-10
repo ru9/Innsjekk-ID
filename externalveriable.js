@@ -18,9 +18,11 @@ function storeCardId() {
       console.log(xhr.response); //Outputs a DOMString by default
       if (this.status == 404) {
         window.location.replace("file:///D:/Innsjekk ID/newid");
+        console.log(this.status + "this");
       } else {
         localStorage.setItem("dbRes", xhr.response);
         window.location.replace("file:///D:/Innsjekk ID/Cardswipe");
+
       }
     }
   }

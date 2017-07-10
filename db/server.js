@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080; // set our port
 
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/Innsjekkid'); // connect to our database
 
 
