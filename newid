@@ -5,7 +5,8 @@
 <head>
   <title>ID Check</title>
   <script type="text/javascript" src="externalveriable.js"></script>
-  <script type="text/javascript" src="testdb.js"></script>
+  <script type="text/javascript" src="newid.js"></script>
+
 </head>
 
 <body>
@@ -14,6 +15,20 @@
     <button type="button" , onclick="window.location.replace('file:///D:/Innsjekk ID/index');">Cancel</button>
   </p>
 
+  <FORM NAME="myform" ACTION="" METHOD="POST">
+    Creating a new user, please fill in all fields:
+    <P>
+      <script type="text/javascript">
+        document.write("Card Number: " + cardId);
+      </script>
+
+      <P>
+        <input type="text" name="fullname" title="Full Name" placeholder="First Name" />
+        <P>
+          <input type="text" name="companyname" title="Company" placeholder="Company" />
+          <P>
+            <INPUT TYPE="button" NAME="button" Value="Submit" onClick="testResults(this.form)">
+  </FORM>
 
 </body>
 

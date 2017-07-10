@@ -7,6 +7,11 @@
 var express = require('express'); // call express
 var app = express(); // define our app using express
 var bodyParser = require('body-parser');
+var cors = require('cors');
+
+//Allow all inc requeests
+
+app.use(cors())
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -18,6 +23,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080; // set our port
 
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/Innsjekkid'); // connect to our database
 
 

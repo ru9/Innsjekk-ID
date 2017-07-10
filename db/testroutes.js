@@ -27,7 +27,11 @@ router.route('/Worker')
   .post(function(req, res) {
 
     var worker = new Worker(); // create a new instance of the worker model
-    worker.name = req.body.name; // set the workers name (comes from the request)
+    console.log(req.body);
+    worker.name = req.body.name;
+    worker.company = req.body.company;
+    worker.cardid = req.body.cardid;
+    worker.checkedIn = req.body.checkedIn; // set the workers name (comes from the request)
 
     // save the worker and check for errors
     worker.save(function(err) {
@@ -53,14 +57,22 @@ router.route('/Worker/:worker_id')
 
   // get the bear with that id (accessed at GET http://localhost:8080/api/bears/:bear_id)
   .get(function(req, res) {
-    Worker.findById(req.params.worker_id, function(err, worker) {
+
+    Worker.where({
+      cardid: req.params.worker_id
+    }).findOne(function(err, worker) {
       if (worker === null || err)
         res.status(404).send('Not found');
       res.json(worker);
     });
-  })
+    /*Worker.findById(req.params.worker_id, function(err, worker) {
+      if (worker === null || err)
+        res.status(404).send('Not found');
+      res.json(worker);
+    });*/
+  });
 
-  .put(function(req, res) {
+/*  .put(function(req, res) {
 
     // use our bear model to find the bear we want
     Worker.findById(req.params.worker_id, function(err, worker) {
@@ -95,5 +107,5 @@ router.route('/Worker/:worker_id')
       });
     });
   });
-
+*/
 module.exports = router;
