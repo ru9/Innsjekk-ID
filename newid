@@ -5,7 +5,6 @@
 <head>
   <title>ID Check</title>
   <script type="text/javascript" src="externalveriable.js"></script>
-  <script type="text/javascript" src="testdb.js"></script>
   <script type="text/javascript" src="newid.js"></script>
 
 </head>
@@ -19,11 +18,16 @@
   <FORM NAME="myform" ACTION="" METHOD="POST">
     Creating a new user, please fill in all fields:
     <P>
-      <input type="text" name="fullname" title="Full Name" style="color:#888;" value="Full Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+      <script type="text/javascript">
+        document.write("Card Number: " + cardId);
+      </script>
+
       <P>
-        <input type="text" name="companyname" title="Company" style="color:#888;" value="Company" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+        <input type="text" name="fullname" title="Full Name" placeholder="First Name" />
         <P>
-          <INPUT TYPE="button" NAME="button" Value="Submit" onClick="testResults(this.form)">
+          <input type="text" name="companyname" title="Company" placeholder="Company" />
+          <P>
+            <INPUT TYPE="button" NAME="button" Value="Submit" onClick="testResults(this.form)">
   </FORM>
 
 </body>
