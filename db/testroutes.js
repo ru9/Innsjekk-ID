@@ -29,7 +29,12 @@ router.route('/Worker')
     var worker = new Worker(); // create a new instance of the worker model
     console.log(req.body);
     worker.name = req.body.name;
+<<<<<<< HEAD
     worker.company = req.body.company; // set the workers name (comes from the request)
+=======
+    worker.company = req.body.company;
+    worker.cardid = req.body.cardid; // set the workers name (comes from the request)
+>>>>>>> parent of 2d58adf... Show ID on cardswipe
 
     // save the worker and check for errors
     worker.save(function(err) {

@@ -3,7 +3,11 @@
 function testResults(form) {
   var fullName = form.fullname.value;
   var companyName = form.companyname.value;
+<<<<<<< HEAD
 
+=======
+  //var cardId = form.cardid.value;
+>>>>>>> parent of 2d58adf... Show ID on cardswipe
   var xhr = new XMLHttpRequest();
   xhr.open('POST', "http://localhost:8080/api/worker/", true);
   xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
@@ -12,7 +16,12 @@ function testResults(form) {
 
   xhr.send(JSON.stringify({
     "name": fullName,
+<<<<<<< HEAD
     "company": companyName
+=======
+    "company": companyName,
+    "cardid": cardId
+>>>>>>> parent of 2d58adf... Show ID on cardswipe
   }));
   alert(fullName + "\n" + companyName);
 }
