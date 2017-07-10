@@ -6,7 +6,15 @@
     "body-parser": "~1.0.1",
     "cors": "^2.8.3",
     "express": "~4.0.0",
+<<<<<<< HEAD
     "mongoose": "^4.10.8",
     "request": "^2.81.0"
+=======
+<<<<<<< HEAD
+    "mongoose": "~3.6.13"
+=======
+    "mongoose": "^4.10.8"
+>>>>>>> parent of 2d58adf... Show ID on cardswipe
+>>>>>>> origin/master
   }
 }

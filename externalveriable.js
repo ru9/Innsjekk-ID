@@ -24,7 +24,8 @@ function storeCardId() {
         window.location.replace("file:///D:/Innsjekk ID/Cardswipe");
 
       }
-    }
+    } >>>
+    >>> > origin / master
   }
   xhr.send();
 
