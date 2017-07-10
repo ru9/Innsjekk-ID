@@ -4,8 +4,7 @@ function f1() {
 
 function storeCardId() {
   var checkId = prompt("Enter Card ID", "");
-  if (checkId === "") {
-    alert("ID can't be empty");
+  if (checkId == "" || checkId == null) {
     return;
   }
   localStorage.setItem("cardId", checkId);
@@ -18,7 +17,6 @@ function storeCardId() {
       console.log(xhr.response); //Outputs a DOMString by default
       if (this.status == 404) {
         window.location.replace("file:///D:/Innsjekk ID/newid");
-        console.log(this.status + "this");
       } else {
         localStorage.setItem("dbRes", xhr.response);
         window.location.replace("file:///D:/Innsjekk ID/Cardswipe");
