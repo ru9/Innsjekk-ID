@@ -17,4 +17,5 @@ function testResults(form) {
       >>> > origin / master
   }));
   alert(fullName + "\n" + companyName + "\n" + cardId);
+  window.location.replace("file:///D:/Innsjekk ID/index");
 }
