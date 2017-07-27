@@ -29,3 +29,4 @@ function storeCardId() {
 
 
 }
+var cardId = localStorage.getItem("cardId");

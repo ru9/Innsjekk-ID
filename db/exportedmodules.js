@@ -1,8 +1,10 @@
+console.log("Start loading bundle.js.");
 var cardId = localStorage.getItem("cardId");
-//var request = require('request');
+var request = require('request');
 
-//Storing and sending info to node
-function testResults(form) {
+
+//POSTing from form in newid
+window.testResults = function(form) {
   var fullName = form.fullname.value;
   var companyName = form.companyname.value;
 
@@ -22,16 +24,13 @@ function testResults(form) {
     console.log(error);
     console.log(resp);
     console.log(body);
+    if (resp.statusCode == 200) {
+      alert("You have been saved! Please swipe your card again to sign in.")
+      window.location.replace("file:///D:/Innsjekk ID/index");
+    } else {
+      alert(resp.statusCode + "\n" + resp.statusMessage + "\n" + "Something went wrong!")
+    }
   })
-  /*var xhr = new XMLHttpRequest();
-  xhr.open('POST', "http://localhost:8080/api/worker/", true);
-  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-  xhr.send(JSON.stringify({
-    "name": fullName,
-    "company": companyName,
-    "cardid": cardId,
-    "checkedIn": false
-  }));*/
   alert(fullName + "\n" + companyName + "\n" + cardId);
-  window.location.replace("file:///D:/Innsjekk ID/index");
 }
+console.log("Finish loading bundle.js");
