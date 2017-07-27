@@ -5,7 +5,9 @@
 <head>
   <title>ID Check</title>
   <script type="text/javascript" src="externalveriable.js"></script>
-  <script type="text/javascript" src="newid.js"></script>
+  <script type="text/javascript" src="db/bundle.js"></script>
+  <!--<script type="text/javascript" src="newid.js"></script>-->
+
 
 </head>
 
