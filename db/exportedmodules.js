@@ -1,7 +1,34 @@
 console.log("Start loading bundle.js.");
-var cardId = localStorage.getItem("cardId");
 var request = require('request');
 
+//GETing cardinfo from server
+window.checkCardId = function() {
+  var cardId = prompt("Enter Card ID", "");
+  if (cardId == "" || cardId == null) {
+    return;
+  } else {
+    localStorage.setItem("cardId", cardId);
+  };
+
+  let i = {
+    uri: 'http://localhost:8080/api/worker/' + cardId,
+  }
+
+  request(i, function(error, resp, body) {
+    console.log(error);
+    console.log(resp);
+    console.log(body);
+
+    if (resp.statusCode == 404) {
+      console.log("404 on statuscode");
+      window.location.replace("file:///D:/Innsjekk ID/newid");
+    } else {
+      localStorage.setItem("dbRes", resp.body);
+      console.log("found id");
+      window.location.replace("file:///D:/Innsjekk ID/Cardswipe");
+    }
+  })
+}
 
 //POSTing from form in newid
 window.testResults = function(form) {
