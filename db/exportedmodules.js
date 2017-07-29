@@ -6,9 +6,8 @@ window.checkCardId = function() {
   var cardId = prompt("Enter Card ID", "");
   if (cardId == "" || cardId == null) {
     return;
-  } else {
-    localStorage.setItem("cardId", cardId);
   };
+  localStorage.setItem("cardId", cardId);
 
   let i = {
     uri: 'http://localhost:8080/api/worker/' + cardId,
