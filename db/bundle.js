@@ -1,8 +1,35 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 console.log("Start loading bundle.js.");
-var cardId = localStorage.getItem("cardId");
 var request = require('request');
 
+//GETing cardinfo from server
+window.checkCardId = function() {
+  var cardId = prompt("Enter Card ID", "");
+  if (cardId == "" || cardId == null) {
+    return;
+  } else {
+    localStorage.setItem("cardId", cardId);
+  };
+
+  let i = {
+    uri: 'http://localhost:8080/api/worker/' + cardId,
+  }
+
+  request(i, function(error, resp, body) {
+    console.log(error);
+    console.log(resp);
+    console.log(body);
+
+    if (resp.statusCode == 404) {
+      console.log("404 on statuscode");
+      window.location.replace("file:///D:/Innsjekk ID/newid");
+    } else {
+      localStorage.setItem("dbRes", resp.body);
+      console.log("found id");
+      window.location.replace("file:///D:/Innsjekk ID/Cardswipe");
+    }
+  })
+}
 
 //POSTing from form in newid
 window.testResults = function(form) {

@@ -4,13 +4,13 @@
 
 <head>
   <title>ID Check</title>
-  <script type="text/javascript" src="externalveriable.js"></script>
+  <script type="text/javascript" src="db/bundle.js"></script>
 </head>
 
 <body>
   <H1>Welcome</H1>
   <p>
-    <button type="button" , onclick="storeCardId();">Card swipe</button>
+    <button type="button" , onclick="checkCardId();">Card swipe</button>
 
   </p>
 
