@@ -9,11 +9,11 @@ window.checkCardId = function() {
   };
   localStorage.setItem("cardId", cardId);
 
-  let i = {
+  let requestOptions = {
     uri: 'http://localhost:8080/api/worker/' + cardId,
   }
 
-  request(i, function(error, resp, body) {
+  request(requestOptions, function(error, resp, body) {
     console.log(error);
     console.log(resp);
     console.log(body);
@@ -23,9 +23,27 @@ window.checkCardId = function() {
       window.location.replace("file:///D:/Innsjekk ID/newid");
     } else {
       localStorage.setItem("dbRes", resp.body);
-      console.log("found id");
+      let checkedInStatusParse = JSON.parse(resp.body);
+      logTime(cardId, new Date(), checkedInStatusParse.checkedIn)
       window.location.replace("file:///D:/Innsjekk ID/Cardswipe");
     }
+  })
+}
+
+function logTime(cardId, dateTime, checkedIn) {
+  let requestOptions = {
+    method: 'PUT',
+    uri: 'http://localhost:8080/api/worker/' + cardId,
+    body: {
+      "log": dateTime,
+      "checkedStatus": checkedIn
+    },
+    json: true
+  }
+  request(requestOptions, function(error, resp, body) {
+    console.log(error);
+    console.log(resp);
+    console.log(body);
   })
 }
 
@@ -34,7 +52,7 @@ window.testResults = function(form) {
   var fullName = form.fullname.value;
   var companyName = form.companyname.value;
 
-  let i = {
+  let requestOptions = {
     method: 'POST',
     uri: 'http://localhost:8080/api/worker/',
     body: {
@@ -46,7 +64,7 @@ window.testResults = function(form) {
     json: true
   }
 
-  request(i, function(error, resp, body) {
+  request(requestOptions, function(error, resp, body) {
     console.log(error);
     console.log(resp);
     console.log(body);

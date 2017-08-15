@@ -31,13 +31,7 @@ router.route('/Worker')
     worker.name = req.body.name;
     worker.company = req.body.company;
     worker.cardid = req.body.cardid;
-    worker.checkedIn = req.body.checkedIn; // set the workers name (comes from the request)
-
-    worker.company = req.body.company; // set the workers name (comes from the request)
-
-    worker.company = req.body.company;
-    worker.cardid = req.body.cardid; // set the workers name (comes from the request)
-
+    worker.checkedIn = req.body.checkedIn;
 
     // save the worker and check for errors
     worker.save(function(err) {
@@ -71,12 +65,36 @@ router.route('/Worker/:worker_id')
         res.status(404).send('Not found');
       res.json(worker);
     });
-    /*Worker.findById(req.params.worker_id, function(err, worker) {
-      if (worker === null || err)
-        res.status(404).send('Not found');
-      res.json(worker);
-    });*/
+  })
+
+  .put(function(req, res) {
+
+
+
+    console.log("before " + req.body.checkedStatus)
+    let checked = !req.body.checkedStatus
+    console.log("after ! " + checked)
+    Worker.update({
+        "cardid": req.params.worker_id
+      }, {
+        "$push": {
+          "log": {
+            datetime: req.body.log,
+            event: checked
+          }
+        },
+        "$set": {
+          "checkedIn": checked
+        },
+      },
+      function(err, raw) {
+        if (err) return handleError(err);
+        res.json(raw);
+      }
+    )
+    console.log("at the end " + checked);
   });
+
 
 /*  .put(function(req, res) {
 

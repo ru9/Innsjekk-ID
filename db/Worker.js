@@ -7,7 +7,8 @@ var workerSchema = new Schema({
   name: String,
   company: String,
   cardid: Number,
-  checkedIn: Boolean
+  checkedIn: Boolean,
+  log: []
 });
 
 module.exports = mongoose.model('Worker', workerSchema);
