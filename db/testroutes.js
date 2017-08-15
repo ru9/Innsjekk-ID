@@ -68,12 +68,8 @@ router.route('/Worker/:worker_id')
   })
 
   .put(function(req, res) {
-
-
-
-    console.log("before " + req.body.checkedStatus)
     let checked = !req.body.checkedStatus
-    console.log("after ! " + checked)
+
     Worker.update({
         "cardid": req.params.worker_id
       }, {
@@ -92,7 +88,6 @@ router.route('/Worker/:worker_id')
         res.json(raw);
       }
     )
-    console.log("at the end " + checked);
   });
 
 
